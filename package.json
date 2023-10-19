@@ -1,0 +1,14 @@
+{
+  "name": "projet_06.1",
+  "version": "1.0.0",
+  "description": "Rien à installer ici, il suffit d'ouvrir le fichier `index.html`.",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.47.0"
+  }
+}

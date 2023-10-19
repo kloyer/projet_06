@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <link href="./css/style.css" rel="stylesheet" type="text/css" />
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/png" href="./assets/favicon.png" />
+  <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/dd96c7925a.js" crossorigin="anonymous"></script>
+  <title>Fisheye - photographe</title>
+</head>
+
+<body>
+  <main id="main">
+    <header>
+      <a href="./index.html" aria-label="Accueil Fisheye">
+        <img src="./assets/images/logo.png" alt="Fisheye Home Page" class="logo" />
+      </a>
+    </header>
+      <div class="photograph-header" tabindex="0" aria-label="profil du photographe">
+        <div class="photograph_infos">
+          <h1 id="photographer-name" tabindex="1"></h1>
+          <p id="photographer-info" tabindex="1"></p>
+          <p></p>
+        </div>
+        <button aria-label="Contactez-moi" class="contact_button" onclick="displayModal()">Contactez-moi</button>
+      </div>
+      <div id="select">
+        <label for="orderSelect" tabindex="0" aria-label="tirer les médias">Trier par</label>
+        <select name="orderSelect" id="orderSelect" aria-label="Trier les médias">
+          <option value="pop" tabindex="1" aria-label="tirer par popularité">Popularité</option>
+          <option value="date" tabindex="1" aria-label="tirer par date">Date</option>
+          <option value="title" tabindex="1" aria-label="tirer par ordre alphabétique">Titre</option>
+        </select>
+      </div>
+      <section id="photograph_medias">
+        <h2 id="media-section-heading" class="visually-hidden">Médias du photographe</h2>
+      </section>
+      <div class="photograph_like-price_popup">
+        <span id="likes-label" class="likes">0</span>
+        <span id="price-label" class="price">0€ / jour</span>
+      </div>
+    </main>
+    <div id="contact_modal">
+      <div class="modal">
+        <header>
+          <h2 id="contact-heading">Contactez-moi</h2>
+          <img src="./assets/icons/close.svg" alt="Fermer le formulaire de contact" onclick="closeModal()" />
+        </header>
+      <form onsubmit="sendMessage(event)">
+        <div>
+          <label for="firstName">Prénom</label>
+          <input id="firstName" name="firstName" />
+          <label for="lastName">Nom</label>
+          <input id="lastName" name="lastName" />
+          <label for="email">Email</label>
+          <input id="email" name="email" />
+          <label for="message">Message</label>
+          <textarea id="message" name="message"></textarea>
+        </div>
+        <button class="contact_button" aria-label="Send">Envoyer</button>
+      </form>
+    </div>
+  </div>
+  <div id="media_modal" aria-label="image closeup view">
+    <button id="left-arrow" aria-label="Previous image" onclick="changeMedia('left')">&lt;</button>
+    <button id="right-arrow" aria-label="Next image" onclick="changeMedia('right')">></button>
+    <button aria-label="Close dialog" onclick="closeMediaModal()">
+      <img src="./assets/icons/close.svg" />
+    </button>
+    <div></div>
+  </div>
+  <script src="./scripts/templates/media.js"></script>
+  <script src="./scripts/templates/photographer.js"></script>
+  <script src="./scripts/pages/photographer.js"></script>
+  <script src="./scripts/utils/contactForm.js"></script>
+</body>
+
+</html>
